@@ -1,30 +1,34 @@
-import logoImage from "../asset/money.jpg"; // Import your logo image
+import { Link } from "react-router-dom";
+import logoImage from "../../asset/icon.png"; // Import your logo image
+import { FaDollarSign } from "react-icons/fa";
 
 export const navItems = [
   {
     name: "About",
-    href: "#About",
+    href: "#footer",
   },
   {
     name: "Features",
-    href: "#feature",
+    href: "#footer",
   },
   {
     name: "Add Expenses",
-    href: "#pricing",
+    href: "/add-expense",
   },
   {
     name: "Expenses",
-    href: "#testimonials",
+    href: "/list",
   },
 ];
 export const Header = () => {
   return (
     <div className="h-24 flex justify-between items-center px-6 bg-black text-white font-caveat text-2xl">
       {/* Logo Section */}
-      <div className="flex items-center">
-        <img src={logoImage} alt="Logo" className="h-20 w-auto" />{" "}
-      </div>
+      <Link to="/">
+        <div className="flex items-center">
+          <FaDollarSign className="text-white size-8 " />{" "}
+        </div>
+      </Link>
       <nav className="flex gap-6">
         {navItems.map(({ name, href }) => (
           <a
