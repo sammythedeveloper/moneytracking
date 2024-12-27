@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ExpenseChart from "./ExpenseChart/ExpenseChart";
+import Footer from "../Footer/Footer";
 
 const ExpenseList = ({ expenses, deleteExpense }) => {
   // Calculate total expenses
@@ -19,9 +20,10 @@ const ExpenseList = ({ expenses, deleteExpense }) => {
   }, {});
 
   return (
+    <div className="relative w-full h-screen bg-cover bg-center"  style={{ backgroundImage: 'url(/money.jpg)' }} >
     <div className="p-6 min-h-screen font-caveat">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-extrabold text-gray-800">
+        <h1 className="text-4xl font-extrabold text-white">
           Your Expense List
         </h1>
         <div className="w-full max-w-3xl mx-auto mt-6">
@@ -60,23 +62,23 @@ const ExpenseList = ({ expenses, deleteExpense }) => {
       </div>
 
       {/* Expense Table Wrapper for Responsiveness */}
-      <div className="overflow-x-auto bg-white rounded-lg shadow-md">
+      <div className="overflow-x-auto bg-white rounded-lg shadow-md ">
         <table className="min-w-full table-auto">
-          <thead className="bg-gray-100">
+          <thead className="bg-black h-24 ">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
+              <th className="px-4 py-2 text-left text-sm font-medium text-white">
                 Category
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
+              <th className="px-4 py-2 text-left text-sm font-medium text-white">
                 Date
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
+              <th className="px-4 py-2 text-left text-sm font-medium text-white">
                 Amount
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
+              <th className="px-4 py-2 text-left text-sm font-medium text-white">
                 Edit
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
+              <th className="px-4 py-2 text-left text-sm font-medium text-white">
                 Delete
               </th>
             </tr>
@@ -113,7 +115,9 @@ const ExpenseList = ({ expenses, deleteExpense }) => {
           </tbody>
         </table>
       </div>
-    </div>
+      </div>
+      <Footer />
+      </div>
   );
 };
 

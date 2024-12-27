@@ -86,7 +86,7 @@ const App = () => {
         </Routes>
       </div>
       {/* Footer added outside of Routes to be globally rendered */}
-      <Footer />
+   
     </Router>
   );
 };

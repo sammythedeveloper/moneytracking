@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logoImage from "../../asset/icon.png"; // Import your logo image
 import { FaDollarSign } from "react-icons/fa";
 
 export const navItems = [
@@ -22,10 +21,10 @@ export const navItems = [
 ];
 export const Header = () => {
   return (
-    <div className="h-24 flex justify-between items-center px-6 bg-black text-white font-caveat text-2xl">
+    <div className="h-32 flex justify-between items-center px-6 bg-black text-white font-caveat text-2xl">
       {/* Logo Section */}
       <Link to="/">
-        <div className="flex items-center">
+        <div className="flex items-center text-3xl"> Track
           <FaDollarSign className="text-white size-8 " />{" "}
         </div>
       </Link>

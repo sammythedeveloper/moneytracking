@@ -109,7 +109,7 @@ const ExpenseChart = ({ expenses }) => {
   }, [expenses]); // Recreate the chart whenever expenses change
 
   return (
-    <div className="flex items-center justify-center bg-gray-50 py-10   ">
+    <div className="flex items-center justify-center py-10">
       <div className="w-full max-w-3xl p-6 bg-white shadow-lg rounded-lg">
         <div className="w-full h-80 sm:h-96 md:h-[400px] lg:h-[500px]">
           <Bar ref={chartRef} data={data} options={options} />
