@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div
       className="relative w-full h-[120vh] bg-cover bg-center flex flex-col"  // Increased height here
-      style={{ backgroundImage: 'url(/money.jpg)' }}// Background image applied here
+      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/money.jpg)` }}
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>

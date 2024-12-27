@@ -5,7 +5,6 @@ import ExpenseList from "./Components/ExpenseList/ExpenseList";
 import EditExpense from "./Components//EditExpense/EditExpense";
 import Header from "./Components/Header/Header";
 import Home from "./Components/HomePage/Home.jsx";
-import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
