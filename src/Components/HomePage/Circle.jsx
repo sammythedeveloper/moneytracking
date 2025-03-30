@@ -5,7 +5,7 @@ export const Circle = (props) => {
   return (
     <div
       className={twMerge(
-        "bg-zinc-900 size-[240px] inline-flex items-center justify-center rounded-full outline outline-[6px] -outline-offset-[6px] outline-fuchsia-500/10",
+        "bg-zinc-900 w-[240px] h-[240px] inline-flex items-center justify-center rounded-full outline outline-[6px] -outline-offset-[6px] outline-fuchsia-500/10",
         className
       )}
     >

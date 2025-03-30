@@ -55,20 +55,7 @@ import torusKnot from "../../asset/torus-knot.png";
 import cube from "../../asset/cube.png";
 import { CutCornerButton } from "../Header/CutCornerButton";
 
-export const loginItems = [
-  {
-    buttonVariant: "tertiary",
-    name: "Login",
-    href: "/signin",
-  },
-  {
-    buttonVariant: "primary",
-    name: "SignUp",
-    href: "/signup",
-  },
-];
-
-export const Landing = () => {
+export const Home = () => {
   return (
       <section className=" py-24 md:py-52 overflow-x-clip ">
         <div className=" container">
@@ -128,4 +115,4 @@ export const Landing = () => {
   );
 };
 
-export default Landing;
+export default Home;

@@ -27,7 +27,7 @@ const App = () => {
     );
     setExpenses(updatedExpenses);
     localStorage.setItem("expenses", JSON.stringify(updatedExpenses));
-    setEditingExpense(null); // Reset editing state
+    setEditingExpense(null);
   };
 
   const deleteExpense = (id) => {
@@ -37,39 +37,14 @@ const App = () => {
   };
 
   return (
-    <Router basename="/moneytracking"> {/* Add the basename here */}
+    <Router>
       <Header />
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/add-expense"
-            element={
-              <AddExpense addExpense={addExpense} />
-            }
-          />
-          <Route
-            path="/list"
-            element={
-              <ExpenseList
-                expenses={expenses}
-                startEditExpense={setEditingExpense}
-                deleteExpense={deleteExpense}
-              />
-            }
-          />
-          <Route
-            path="/edit/:id"
-            element={
-              <EditExpense
-                expenses={expenses}
-                saveEditedExpense={saveEditedExpense}
-                setEditingExpense={setEditingExpense}
-              />
-            }
-          />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-expense" element={<AddExpense addExpense={addExpense} />} />
+        <Route path="/list" element={<ExpenseList expenses={expenses} startEditExpense={setEditingExpense} deleteExpense={deleteExpense} />} />
+        <Route path="/edit/:id" element={<EditExpense expenses={expenses} saveEditedExpense={saveEditedExpense} setEditingExpense={setEditingExpense} />} />
+      </Routes>
     </Router>
   );
 };

@@ -67,7 +67,7 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/money.jpg)` }}
+    <div className="relative w-full h-screen bg-cover bg-center"
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -137,7 +137,6 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
           {successMessage && <p className="mt-4 text-sm text-green-600">{successMessage}</p>}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
