@@ -67,9 +67,7 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
   };
 
   return (
-    <div
-      className="relative w-full h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/money.jpg)` }}
+    <div className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/money.jpg)` }}
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -78,10 +76,7 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
         <div className="sticky top-20 max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg font-caveat m-10 z-10">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label
-                htmlFor="category"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="category" className="block text-sm font-medium text-gray-700">
                 Category:
               </label>
               <select
@@ -99,10 +94,7 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
             </div>
 
             <div>
-              <label
-                htmlFor="date"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="date" className="block text-sm font-medium text-gray-700">
                 Date:
               </label>
               <input
@@ -115,10 +107,7 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
             </div>
 
             <div>
-              <label
-                htmlFor="amount"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
                 Amount:
               </label>
               <input
@@ -142,14 +131,10 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
           </form>
 
           {/* Display error message */}
-          {errorMessage && (
-            <p className="mt-4 text-sm text-red-600">{errorMessage}</p>
-          )}
+          {errorMessage && <p className="mt-4 text-sm text-red-600">{errorMessage}</p>}
 
           {/* Display success message */}
-          {successMessage && (
-            <p className="mt-4 text-sm text-green-600">{successMessage}</p>
-          )}
+          {successMessage && <p className="mt-4 text-sm text-green-600">{successMessage}</p>}
         </div>
       </div>
       <Footer />

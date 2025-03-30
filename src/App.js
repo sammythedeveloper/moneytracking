@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddExpense from "./Components/AddExpense/AddExpense";
 import ExpenseList from "./Components/ExpenseList/ExpenseList";
-import EditExpense from "./Components//EditExpense/EditExpense";
+import EditExpense from "./Components/EditExpense/EditExpense";
 import Header from "./Components/Header/Header";
 import Home from "./Components/HomePage/Home.jsx";
 
@@ -37,39 +37,25 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <Router basename="/moneytracking"> {/* Add the basename here */}
       <Header />
       <div className="content">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div>
-                <Home />
-              </div>
-            }
-          />
+          <Route path="/" element={<Home />} />
           <Route
             path="/add-expense"
             element={
-              <div>
-                <AddExpense addExpense={addExpense} />
-                <button>
-                  <Link to="/" style={{ textDecoration: "none", color: "inherit" }}></Link>
-                </button>
-              </div>
+              <AddExpense addExpense={addExpense} />
             }
           />
           <Route
             path="/list"
             element={
-              <div>
-                <ExpenseList
-                  expenses={expenses}
-                  startEditExpense={setEditingExpense}
-                  deleteExpense={deleteExpense}
-                />
-              </div>
+              <ExpenseList
+                expenses={expenses}
+                startEditExpense={setEditingExpense}
+                deleteExpense={deleteExpense}
+              />
             }
           />
           <Route
@@ -84,8 +70,6 @@ const App = () => {
           />
         </Routes>
       </div>
-      {/* Footer added outside of Routes to be globally rendered */}
-   
     </Router>
   );
 };
