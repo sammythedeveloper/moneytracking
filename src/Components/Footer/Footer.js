@@ -3,8 +3,8 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer id="footer" className=" text-white py-64 ">
-      <div className="max-w-screen-xl mx-auto  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className=" mt-64 " >
+      <div className="max-w-screen-xl mx-auto  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 ml-16 ">
         
         {/* About Section */}
         <div className="footer-section">
@@ -57,9 +57,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center text-gray-400 ">
-        <p>&copy; {new Date().getFullYear()} MoneyTrack. All Rights Reserved.</p>
+        <p className=" py-24 " > &copy; {new Date().getFullYear()} MoneyTrack. All Rights Reserved.</p>
       </div>
-    </footer>
+      </footer>
   );
 };
 
