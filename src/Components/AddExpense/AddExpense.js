@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import torusKnot from "../../asset/torus-knot.png";
-import cube from "../../asset/cube.png";
-import { CutCornerButton } from "../Header/CutCornerButton.jsx"; // Assuming this is your styled button
+import AppLayout from "../AppLayout/AppLayout.jsx";
+import { CutCornerButton } from "../Header/CutCornerButton.jsx";
 
 // Define categories for select dropdown
 const categories = [
@@ -73,77 +72,73 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
   };
 
   return (
-    <section className="py-24 md:py-52 overflow-x-clip">
-      <div className="container">
-        <div className="flex justify-center">
-          <div className="max-w-lg mx-auto p-6  bg-zinc-900 shadow-md rounded-lg font-caveat m-10">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="category" className="block text-sm font-medium text-gray-700">
-                  Category:
-                </label>
-                <select
-                  id="category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                >
-                  {categories.map((cat) => (
-                    <option key={cat} value={cat}>
-                      {cat}
-                    </option>
-                  ))}
-                </select>
-              </div>
+    <AppLayout>
+      <div className="flex justify-center">
+        <div className="w-full max-w-3xl px-6 py-8 bg-transparent  rounded-lg ">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div>
+              <label htmlFor="category" className="block uppercase font-extrabold text-white ">
+                Category
+              </label>
+              <select
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 font-semibold text-purple-700 uppercase "
+              >
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="date" className="block uppercase font-extrabold text-white ">
+                Date
+              </label>
+              <input
+                id="date"
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-lg font-semibold text-purple-700 uppercase "
+              />
+            </div>
 
-              <div>
-                <label htmlFor="date" className="block text-sm font-medium text-gray-700">
-                  Date:
-                </label>
-                <input
-                  id="date"
-                  type="date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
+            <div>
+              <label htmlFor="amount" className="block uppercase font-extrabold text-white ">
+                Amount
+              </label>
+              <input
+                id="amount"
+                type="number"
+                placeholder="Amount"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md  focus:ring-indigo-500 focus:border-indigo-500 font-semibold text-black uppercase placeholder-purple-500 "
+              />
+            </div>
 
-              <div>
-                <label htmlFor="amount" className="block text-sm font-medium text-gray-700">
-                  Amount:
-                </label>
-                <input
-                  id="amount"
-                  type="number"
-                  placeholder="Amount"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-                />
-              </div>
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="px-8 py-3 text-white uppercase font-extrabold focus:outline-none focus:ring-2 focus:ring-indigo-500 text-lg"
+              >
+              <CutCornerButton className="hover:bg-white hover:text-black" >{editingExpense ? "Save Changes" : "Add Expense"}</CutCornerButton>  
+              </button>
+            </div>
+          </form>
 
-              <div className="flex justify-end">
-                <button
-                  type="submit"
-                  className="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-green-600 hover:text-black focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                  {editingExpense ? "Save Changes" : "Add Expense"}
-                </button>
-              </div>
-            </form>
+          {/* Display error message */}
+          {errorMessage && <p className="mt-4 text-sm text-red-600">{errorMessage}</p>}
 
-            {/* Display error message */}
-            {errorMessage && <p className="mt-4 text-sm text-red-600">{errorMessage}</p>}
-
-            {/* Display success message */}
-            {successMessage && <p className="mt-4 text-sm text-green-600">{successMessage}</p>}
-          </div>
+          {/* Display success message */}
+          {successMessage && <p className="mt-4 text-sm text-green-600">{successMessage}</p>}
         </div>
       </div>
-    </section>
+    </AppLayout>
   );
 };
 
 export default AddExpense;
-
