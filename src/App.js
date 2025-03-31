@@ -6,6 +6,7 @@ import EditExpense from "./Components/EditExpense/EditExpense";
 import Header from "./Components/Header/Header";
 import Home from "./Components/HomePage/Home.jsx";
 import { Features } from "./Components/Feature/Feature.jsx";
+import Footer from "./Components/Footer/Footer.js";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
@@ -75,6 +76,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer/>
     </Router>
   );
 };

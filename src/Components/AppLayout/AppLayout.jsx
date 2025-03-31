@@ -3,6 +3,8 @@ import { Hexagon } from "./Hexagon"; // Assuming your design components are reus
 import { Circle } from "./Circle";
 import torusKnot from "../../asset/torus-knot.png";
 import cube from "../../asset/cube.png";
+import ring from "../../asset/torus.png"
+import astroid from "../../asset/icosahedron.png"
 
 const AppLayout = ({ children }) => {
   return (
@@ -41,6 +43,17 @@ const AppLayout = ({ children }) => {
               />
             </Circle>
           </div>
+          <div className="absolute -left-[450px] -top-[-1380px] z-0">
+            <Circle>
+              <img
+                src={ring }
+                alt="3D cube shape"
+                className="size-[140px]"
+              />
+            </Circle>
+          </div>
+         
+          
         </div>
       </div>
       {/* Content is above the background elements */}

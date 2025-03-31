@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-black text-white py-16 font-caveat  ">
-      {/* Footer Container */}
-      <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer id="footer" className=" text-white py-64 ">
+      <div className="max-w-screen-xl mx-auto  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         
         {/* About Section */}
         <div className="footer-section">
@@ -40,8 +38,6 @@ const Footer = () => {
             Phone: +1 123 456 7890
           </p>
         </div>
-
-        {/* Social Media Section */}
         <div className="footer-section">
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-6 text-gray-400">
@@ -60,9 +56,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer Bottom */}
-      <div className="mt-12 text-center text-gray-400">
+      <div className="text-center text-gray-400 ">
         <p>&copy; {new Date().getFullYear()} MoneyTrack. All Rights Reserved.</p>
       </div>
     </footer>
