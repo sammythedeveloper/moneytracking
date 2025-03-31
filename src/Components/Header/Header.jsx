@@ -31,14 +31,12 @@ export const Header = ({ user }) => {
     <header className="sticky top-0 z-40 bg-zinc-900/50 backdrop-blur-lg">
       <div className="container">
         <div className="flex justify-between items-center h-24 md:h-28">
-          <Link to={"/"}>
-            <div className="font-heading text-4xl font-bold">
-              <h1 className="pl-10">MONIFY</h1>
-            </div>
-          </Link>
-
+          <div className="font-heading text-4xl font-bold">
+            <h1>
+              <Link to={"/"}>MONIFY </Link>
+            </h1>
+          </div>
           <div className="flex items-center gap-4">
-            {/* Hamburger Icon for small screens */}
             <div className="md:hidden cursor-pointer" onClick={toggleMenu}>
               {!isMenuOpen ? (
                 // Hamburger icon
