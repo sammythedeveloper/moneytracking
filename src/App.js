@@ -5,6 +5,7 @@ import ExpenseList from "./Components/ExpenseList/ExpenseList";
 import EditExpense from "./Components/EditExpense/EditExpense";
 import Header from "./Components/Header/Header";
 import Home from "./Components/HomePage/Home.jsx";
+import { Features } from "./Components/Feature/Feature.jsx";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
@@ -40,10 +41,39 @@ const App = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/add-expense" element={<AddExpense addExpense={addExpense} />} />
-        <Route path="/list" element={<ExpenseList expenses={expenses} startEditExpense={setEditingExpense} deleteExpense={deleteExpense} />} />
-        <Route path="/edit/:id" element={<EditExpense expenses={expenses} saveEditedExpense={saveEditedExpense} setEditingExpense={setEditingExpense} />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Home />
+              <Features />
+            </>
+          }
+        />
+        <Route
+          path="/add-expense"
+          element={<AddExpense addExpense={addExpense} />}
+        />
+        <Route
+          path="/list"
+          element={
+            <ExpenseList
+              expenses={expenses}
+              startEditExpense={setEditingExpense}
+              deleteExpense={deleteExpense}
+            />
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <EditExpense
+              expenses={expenses}
+              saveEditedExpense={saveEditedExpense}
+              setEditingExpense={setEditingExpense}
+            />
+          }
+        />
       </Routes>
     </Router>
   );
