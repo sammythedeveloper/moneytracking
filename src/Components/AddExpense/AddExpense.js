@@ -131,10 +131,10 @@ const AddExpense = ({ addExpense, editingExpense, saveEditedExpense }) => {
           </form>
 
           {/* Display error message */}
-          {errorMessage && <p className="mt-4 text-sm text-red-600">{errorMessage}</p>}
+          {errorMessage && <p className="uppercase mt-4 text-sm text-red-600 tracking-wider ">{errorMessage}</p>}
 
           {/* Display success message */}
-          {successMessage && <p className="mt-4 text-sm text-green-600">{successMessage}</p>}
+          {successMessage && <p className=" uppercase mt-4 text-sm text-green-600 tracking-wider  ">{successMessage}</p>}
         </div>
       </div>
     </AppLayout>
