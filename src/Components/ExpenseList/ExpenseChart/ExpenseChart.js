@@ -1,6 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { Bar } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip, Legend } from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
 // Register necessary components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
@@ -24,11 +31,11 @@ const ExpenseChart = ({ expenses }) => {
         label: "Expenses by Category",
         data: Object.values(categorizedExpenses), // Amounts
         backgroundColor: [
-          "rgba(0, 0, 0, 0.8)",// Light Blue
-          "rgba(0, 0, 0, 0.8)", // Coral
-          "rgba(0, 0, 0, 0.8)", // Light Green
-          "rgba(0, 0, 0, 0.8)", // Yellow
-          "rgba(0, 0, 0, 0.8)", // Lavender
+          "rgba(0, 255, 255, 0.8)", // Light Blue
+          "rgba(255, 165, 0, 1)", // Coral
+          "rgba(34, 193, 34, 1)", // Light Green
+          "rgba(255, 221, 51, 1)", // Yellow
+          "rgba(255, 105, 180, 1)", // Lavender
         ],
         borderColor: [
           "rgba(99, 184, 255, 1)", // Light Blue
@@ -38,7 +45,7 @@ const ExpenseChart = ({ expenses }) => {
           "rgba(187, 98, 255, 1)", // Lavender
         ],
         borderWidth: 0, // Remove border for a cleaner look
-        barThickness: 30, // Make bars thinner
+        barThickness: 35, // Make bars thinner
         hoverBackgroundColor: [
           "rgba(99, 184, 255, 1)",
           "rgba(253, 137, 111, 1)",
@@ -59,6 +66,7 @@ const ExpenseChart = ({ expenses }) => {
           font: {
             size: 14, // Adjust font size of legend
             weight: "bold", // Bold the legend text
+            color: "#333",
           },
         },
       },
@@ -84,7 +92,9 @@ const ExpenseChart = ({ expenses }) => {
       x: {
         beginAtZero: true, // Start the x-axis from zero
         ticks: {
+          color: "#fff",
           font: {
+            weight: 460,
             size: 14, // Adjust font size of x-axis labels
           },
         },
@@ -92,8 +102,10 @@ const ExpenseChart = ({ expenses }) => {
       y: {
         beginAtZero: true, // Start the y-axis from zero
         ticks: {
+          color: "#fff",
           font: {
             size: 14, // Adjust font size of y-axis labels
+            weight: 460,
           },
         },
       },
@@ -110,7 +122,7 @@ const ExpenseChart = ({ expenses }) => {
 
   return (
     <div className="flex items-center justify-center py-10">
-      <div className="w-full max-w-3xl p-6 bg-white shadow-lg rounded-lg">
+      <div className="w-full max-w-3xl p-6  rounded-lg">
         <div className="w-full h-80 sm:h-96 md:h-[400px] lg:h-[500px]">
           <Bar ref={chartRef} data={data} options={options} />
         </div>

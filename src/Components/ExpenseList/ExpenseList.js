@@ -27,7 +27,7 @@ const ExpenseList = ({ expenses, deleteExpense }) => {
       >
         <div className="p-6 min-h-screen font-caveat">
           <div className="mb-8 text-center">
-            <h1 className="text-4xl font-extrabold text-white">
+            <h1 className=" uppercase text-4xl font-extrabold text-white tracking-wider ">
               Your Expense List
             </h1>
             <div className="w-full max-w-3xl mx-auto mt-6">

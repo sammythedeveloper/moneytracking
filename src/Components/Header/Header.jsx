@@ -64,7 +64,7 @@ export const Header = ({ user }) => {
             {/* Links visible on large screens */}
             <div className="flex gap-4 items-center">
               <CutCornerButton className="hidden md:inline-flex">
-                <Link to="/">About</Link>
+                <Link to="features">About</Link>
               </CutCornerButton>
               <Link to="/add-expense">
                 <CutCornerButton className="hidden md:inline-flex">
